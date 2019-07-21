@@ -23,6 +23,10 @@ import usb.core
 import usb.util
 import zlib
 
+if sys.platform == "darwin":
+    import os
+    os.environ["DYLD_FALLBACK_LIBRARY_PATH"] = "/opt/local/lib"
+
 # VID/PID
 __VID = 0x0483
 __PID = 0xDF11
