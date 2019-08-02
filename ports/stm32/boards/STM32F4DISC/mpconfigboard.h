@@ -1,12 +1,14 @@
 #define MICROPY_HW_BOARD_NAME       "F4DISC"
 #define MICROPY_HW_MCU_NAME         "STM32F407"
 
-#define MICROPY_HW_HAS_SWITCH       (1)
-#define MICROPY_HW_HAS_FLASH        (1)
-#define MICROPY_HW_ENABLE_RNG       (1)
-#define MICROPY_HW_ENABLE_RTC       (1)
-#define MICROPY_HW_ENABLE_DAC       (1)
-#define MICROPY_HW_ENABLE_USB       (1)
+#define MICROPY_HW_HAS_SWITCH           (1)
+#define MICROPY_HW_HAS_FLASH            (1)
+#define MICROPY_HW_ENABLE_RNG           (1)
+#define MICROPY_HW_ENABLE_RTC           (1)
+#define MICROPY_HW_ENABLE_DAC           (1)
+#define MICROPY_HW_ENABLE_USB           (1)
+#define MICROPY_HW_ENABLE_SDCARD        (1)
+#define MICROPY_HW_HAS_SDMMC_4BIT_BUS   (0)
 
 // HSE is 8MHz
 #define MICROPY_HW_CLK_PLLM (8)
@@ -78,6 +80,11 @@
 #define MICROPY_HW_LED4             (pin_D15) // blue
 #define MICROPY_HW_LED_ON(pin)      (mp_hal_pin_high(pin))
 #define MICROPY_HW_LED_OFF(pin)     (mp_hal_pin_low(pin))
+
+// SD card detect switch
+#define MICROPY_HW_SDCARD_DETECT_PIN        (pin_B0)
+#define MICROPY_HW_SDCARD_DETECT_PULL       (GPIO_PULLUP)
+#define MICROPY_HW_SDCARD_DETECT_PRESENT    (GPIO_PIN_RESET)
 
 // USB config
 #define MICROPY_HW_USB_FS              (1)
